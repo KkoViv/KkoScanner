@@ -35,7 +35,7 @@ def ask_ip_address():
                     print(f"The {Fore.GREEN}{Style.BRIGHT}{your_target}{Style.RESET_ALL} IP Address is valid and reachable!")
                     return your_target
                 else:
-                    print(f"\n{Fore.RED}{Style.BRIGHT}!!!{Style.RESET_ALL} The target seems unreachable.")# inform user about hte host unreachable
+                    print(f"\n{Fore.RED}{Style.BRIGHT}!!!{Style.RESET_ALL}The target seems unreachable.")# inform user about hte host unreachable
                     print(f"    We can't know if the host is offline or instead the network filters the ping packets.")
                     print(f"\nYou can select:")
                     print(f"{Fore.YELLOW}'c'{Style.RESET_ALL} to perform the scan against {Fore.GREEN}{your_target}{Style.RESET_ALL}")

@@ -43,6 +43,7 @@ def main():
 ###################################
 
 # print the welcome banner
+# !!!!!!!!!!! need check about sudo permission
 
     scan_data = ScanParam()                                       # create class object
 
