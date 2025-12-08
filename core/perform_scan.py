@@ -42,16 +42,17 @@ def perform_scan(scan_data):
         open_scan(scan_data, scan_data.port_list[1], flag_set)                     # return the port status
         time_out = (time.time() +30 )                 # take the current time
         
-     elif mode == 'r':
+    elif mode == 'r':
 
-		port_list = []   		# port_list[]
-        for x in range(scan_data.port_list[1],scan_data.port_list[2]+1)
-			port_list.append(x)
-		random.shuffle(port_list)						# shuffle the list 
+        port_list = []   		# port_list[]
+        for x in range(scan_data.port_list[1],scan_data.port_list[2]+1):
+            port_list.append(x)
+        
+        random.shuffle(port_list)						# shuffle the list 
         
         for port in port_list:							# select the port to scan
-			with scan_data.semaphore:					# open a thread if semaphore is under his limit
-				open_scan(scan_data, port, flag_set)   # call open_scan function(scan_data)
+            with scan_data.semaphore:					# open a thread if semaphore is under his limit
+                open_scan(scan_data, port, flag_set)   # call open_scan function(scan_data)
         time_out = (time.time() +30 ) 
 
     while time_out > time.time():
