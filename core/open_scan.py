@@ -7,7 +7,7 @@
 import time
 import socket
 from socket import AF_INET, IPPROTO_RAW, IPPROTO_TCP, SOCK_RAW
-from packet_craft import packet_craft
+from netlib.packet_craft import packet_craft
 
 ###################################
 # CORE FUNCTION

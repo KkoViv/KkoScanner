@@ -6,7 +6,7 @@
 ###################################
 
 from colorama import Fore, Style, Back, init
-from bye_bye import bye_bye
+from ui.bye_bye import bye_bye
 
 ###################################
 # Core function

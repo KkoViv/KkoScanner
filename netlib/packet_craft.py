@@ -7,8 +7,8 @@
 import struct
 import random
 import socket
-from calculate_check import calculate_check
-from flag_bytes import flag_bytes
+from netlib.calculate_check import calculate_check
+from netlib.flag_bytes import flag_bytes
 
 ###################################
 # CORE FUNCTION

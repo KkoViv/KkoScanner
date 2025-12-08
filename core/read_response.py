@@ -8,8 +8,8 @@ import struct
 import socket
 import time
 from colorama import Fore, Style
-from open_scan import open_scan
-from flag_bytes import flag_bytes
+from core.open_scan import open_scan
+from netlib.flag_bytes import flag_bytes
 
 def read_response(scan_data, data):
 

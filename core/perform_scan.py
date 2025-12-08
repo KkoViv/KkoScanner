@@ -8,9 +8,9 @@ import time
 import random
 import socket
 import threading
-from packet_craft import packet_craft
-from open_scan import open_scan
-from receptacle import receptacle
+from netlib.packet_craft import packet_craft
+from core.open_scan import open_scan
+from core.receptacle import receptacle
 
 ###################################
 # CORE FUNCTION

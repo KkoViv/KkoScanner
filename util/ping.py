@@ -1,7 +1,7 @@
 # this file perform a ping
 
-from icmp_creation import ICMP_Creation
-from sent_icmp import sent_icmp
+from netlib.icmp_creation import ICMP_Creation
+from netlib.sent_icmp import sent_icmp
 
 ###################################
 # CORE FUNCTION

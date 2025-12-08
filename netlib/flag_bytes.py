@@ -2,7 +2,7 @@
 
 def flag_bytes(flag_s):
     
-    if flag_s == "SYN" # DELETE IT " 'Open Scan' or flag_s == 'Half-Open Scan':
+    if flag_s == "SYN": # DELETE IT " 'Open Scan' or flag_s == 'Half-Open Scan'
         set_flag = 0b0101000000000010 # 2 bytes (4/6/0/0/0/0/1/0 bits) H
     elif flag_s == "RST":
         set_flag = 0b0101000000000100 # 2 bytes (4/6/0/0/0/1/0/0 bits) H

@@ -9,8 +9,8 @@
 
 from colorama import Fore,Style,init,Back               # set the output color etc etc
 import ipaddress                                        # to check valid ip address 
-from bye_bye import bye_bye                              # exit kindly
-from ping import ping
+from ui.bye_bye import bye_bye                              # exit kindly
+from util.ping import ping
 
 ###################################
 # Ask user input for IP Address and check it

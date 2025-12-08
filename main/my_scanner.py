@@ -20,17 +20,17 @@
 # IMPORTED functions
 ###################################
 
-from bye_bye import bye_bye
-from ask_ip_address import ask_ip_address
-from scan_param_class import ScanParam
-from chosen_ports import chosen_ports
-from create_list import create_list
-from scan_type import scan_type
-from flag_bytes import flag_bytes
-from perform_scan import perform_scan
-from my_ip_function import my_ip_function
-from create_list_dict import create_list_dict
-from display_result import display_result
+from ui.bye_bye import bye_bye
+from ui.ask_ip_address import ask_ip_address
+from core.scan_param_class import ScanParam
+from ui.chosen_ports import chosen_ports
+from util.create_list import create_list
+from ui.scan_type import scan_type
+# DELETE IT from flag_bytes import flag_bytes
+from core.perform_scan import perform_scan
+from util.my_ip_function import my_ip_function
+from util.create_list_dict import create_list_dict
+from ui.display_result import display_result
 
 ###################################
 # MAIN FUNCTION

@@ -8,8 +8,8 @@
 
 import socket
 import time
-from read_response import read_response
-from bye_bye import bye_bye
+from core.read_response import read_response
+from ui.bye_bye import bye_bye
 from colorama import Fore, Style
 
 ###################################

@@ -3,7 +3,7 @@
 ###################################
 
 import struct
-from calculate_check import calculate_check
+from netlib.calculate_check import calculate_check
 
 ###################################
 # Craft the ICMP packet

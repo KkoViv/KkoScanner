@@ -11,7 +11,7 @@
 ###########################
 
 from colorama import Fore, Back, init, Style
-from bye_bye import bye_bye
+from ui.bye_bye import bye_bye
 
 ###################################
 # RESET COLORAMA STYLE

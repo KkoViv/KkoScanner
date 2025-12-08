@@ -4,7 +4,7 @@ import socket
 import ipaddress
 from socket import AF_INET, SOCK_DGRAM, IPPROTO_UDP
 from colorama import Fore, Style, init
-from bye_bye import bye_bye
+from ui.bye_bye import bye_bye
 
 ###################################
 # Retrieve the Source IP
