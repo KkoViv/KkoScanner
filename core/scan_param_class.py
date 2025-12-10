@@ -15,3 +15,4 @@ class ScanParam:
         self.recv_pack_errors = 0
         self.malformed_pack = 0
         self.short_pack = 0
+        # TODO add dict of error from send_response

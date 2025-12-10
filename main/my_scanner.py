@@ -65,5 +65,7 @@ def main():
 
     display_result(scan_data)                                     # output
 
+    # TODO add option to read error related to the ACK/RST/FIN packet sent
+
 if __name__ == "__main__":
     main()

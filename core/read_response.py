@@ -10,6 +10,7 @@ import time
 from colorama import Fore, Style
 from core.open_scan import open_scan
 from netlib.flag_bytes import flag_bytes
+# TODO add send_response
 
 def read_response(scan_data, data):
 
@@ -58,7 +59,11 @@ def read_response(scan_data, data):
     f_syn = bool(flags & 0x2)
     f_fin = bool(flags & 0x1)
 
+    # TODO delete it in production
     print(f_urg,f_ack,f_psh,f_rst,f_syn,f_fin, src_ip, recv_s_port) # debug and future uses
+
+    # TODO replace the call of open scan with send_response when we need to send ACK/FIN/RST
+
 
     if recv_s_port in scan_data.sorted_dict:
 
