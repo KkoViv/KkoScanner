@@ -29,13 +29,7 @@ def perform_scan(scan_data):
     t_receptacle.start()
 
     mode = scan_data.port_list[0]
-
-    # DELETE IT
-    #if scan_data.type_scan == 'o':
-    #    flag_set = 'Open Scan'
-    #else:
-    #    flag_set = 'Half-Open Scan'
-    
+   
     flag_set = "SYN"
 
     if mode == 's':
@@ -61,6 +55,7 @@ def perform_scan(scan_data):
     stop_continue.clear()
     t_receptacle.join()
 
+   #TODO add p and a option 
     '''
  
             

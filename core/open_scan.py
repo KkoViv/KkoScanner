@@ -13,6 +13,8 @@ from netlib.packet_craft import packet_craft
 # CORE FUNCTION
 ###################################
 
+# TODO Fix the logic behind error reporting avoiding to store only the last error
+
 def open_scan(scan_data, port, flag_set):
 
     sock = None

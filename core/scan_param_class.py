@@ -7,7 +7,6 @@ class ScanParam:
         self.port_info = None
         self.port_list = []
         self.type_scan = None
-        # DELETE IT self.flag_bytes = None
         self.my_ip = None
         self.scan_list = []
         self.sorted_dict = {}
@@ -15,4 +14,4 @@ class ScanParam:
         self.recv_pack_errors = 0
         self.malformed_pack = 0
         self.short_pack = 0
-        # TODO add dict of error from send_response
+        self.error_response = {}

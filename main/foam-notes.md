@@ -158,8 +158,10 @@
 
 ### 8.1. Step immediati
 
-- [ ] Aggiungere `error_response` a `scan_data`.
-- [ ] Adattare `open_scan` a usare `error_response` invece di `sorted_dict` per gli errori di trasporto.
+- [X] Aggiungere `error_response` a `scan_data`.
+- [X] Verificare se lo scan viene effettuate faccendo un shuffle di `scan_list`
+- [ ] Adattare `send_response` a usare `error_response` invece di `sorted_dict` per gli errori.
+- [ ] rivedere la logica degli errori in `open_scan`.
 - [ ] Definire la firma di `send_response`.
 - [ ] Implementare `send_response` come copia 1:1 di `open_scan` con gestione errori diversa.
 - [ ] Integrare `send_response` dentro `read_response` nei punti giusti.
