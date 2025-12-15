@@ -15,8 +15,9 @@ from netlib.packet_craft import packet_craft
 
 # TODO Replace Exception filling the new scan_param_errorList
 # TODO to improve the debugging and result analisys add metrics as number of attempts
+# TODO modify logic on error reporting to avoid overwriting
 
-def open_scan(scan_data, port, flag_set):
+def send_response(scan_data, port, flag_set):
 
     sock = None
 
@@ -36,7 +37,7 @@ def open_scan(scan_data, port, flag_set):
                     attempt += 1
                     time.sleep(0.2) # add a little time before to try again
                     if attempt == 3:
-                        scan_data.sorted_dict[port] = ["Something went wrong during socket creation", None]
+                        scan_data.error_response[port] = ["Something went wrong during socket creation", None]
                         return None
 
             attempt = 0
@@ -52,7 +53,7 @@ def open_scan(scan_data, port, flag_set):
                     attempt += 1
                     time.sleep(0.2) # add a little time before to try again
                     if attempt == 3:
-                        scan_data.sorted_dict[port] = ["Something went wrong during packet creation", None]
+                        scan_data.error_response[port] = ["Something went wrong during packet creation", None]
                         return None
 
             attempt = 0
@@ -68,7 +69,7 @@ def open_scan(scan_data, port, flag_set):
                     attempt += 1
                     time.sleep(0.2) # add a little time before to try again
                     if attempt == 3:
-                        scan_data.sorted_dict[port] = ["Something went wrong sending the packet", None]
+                        scan_data.error_response[port] = ["Something went wrong sending the packet", None]
                         return None
     finally:
         if sock is not None:

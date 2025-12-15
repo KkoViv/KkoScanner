@@ -160,8 +160,9 @@
 
 - [X] Aggiungere `error_response` a `scan_data`.
 - [X] Verificare se lo scan viene effettuate faccendo un shuffle di `scan_list`
+- [ ] modificare la logica del riportare gli errori sia in sorted_dict solo errore bloccante che in error response errore bloccante, flag inviata
 - [ ] Adattare `send_response` a usare `error_response` invece di `sorted_dict` per gli errori.
-- [ ] rivedere la logica degli errori in `open_scan`.
+- [ ] modificare `open_scan` perché mostri solo l'ultimo errore bloccante ma alimenti i counter degli errori
 - [ ] Definire la firma di `send_response`.
 - [ ] Implementare `send_response` come copia 1:1 di `open_scan` con gestione errori diversa.
 - [ ] Integrare `send_response` dentro `read_response` nei punti giusti.
