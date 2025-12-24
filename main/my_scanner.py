@@ -55,7 +55,9 @@ def main():
 
     scan_data.port_list = create_list(scan_data.port_info)        # fill the list of ports 
 
-    scan_data.type_scan = scan_type()                             # retrieve the 
+    scan_data.type_scan = scan_type()                             # retrieve the scan type
+
+    # TODO add function to ask user how many attempts needed before to stop the active phase for single port
 
     create_list_dict(scan_data)                                    # create the list for scanning and the dict to store results
     

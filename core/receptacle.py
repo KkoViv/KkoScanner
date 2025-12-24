@@ -32,9 +32,9 @@ def receptacle (scan_data, stop_continue):
 
             if attempt == 3:
 
-                print(f"{FORE.RED}{Style.BRIGHT}!!! !!! !!!{Style.RESET_ALL}")
-                print(f"{FORE.WHITE}>>> >>> We failed to create the socket : {FORE.YELLOW}{error}{Style.RESET_ALL}")
-                print(f"{FORE.RED}{Style.BRIGHT}!!! !!! !!!{Style.RESET_ALL}")
+                print(f"{Fore.RED}{Style.BRIGHT}!!! !!! !!!{Style.RESET_ALL}")
+                print(f"{Fore.WHITE}>>> >>> We failed to create the socket : {Fore.YELLOW}{error}{Style.RESET_ALL}")
+                print(f"{Fore.RED}{Style.BRIGHT}!!! !!! !!!{Style.RESET_ALL}")
                 bye_bye()
 
     while stop_continue.is_set():

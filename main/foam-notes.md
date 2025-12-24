@@ -160,6 +160,10 @@
 
 - [X] Aggiungere `error_response` a `scan_data`.
 - [X] Verificare se lo scan viene effettuate faccendo un shuffle di `scan_list`
+- [ ] in Scan_Param Creare il dizionario di verifica completamento scan con Key:port Value: performed/n, timestamp, completed/n
+- [ ] in Scan_Param Creare il contatore degli scan valore iniziale = 0, modificato in = numero porte da scan, decrementato ogni volta che una porta e'completed
+- [ ] creare una funzione check_completed come thread parallelo a receptacle che controlli il dizionario di verifica, marcando completed le porte in attesa d a+ di 30 secondi e decrementando il contatore.
+- [ ] modificare receptacle perché interrompa recvfrom dopo un tot di tempo che lo scann é stato completato.
 - [ ] modificare la logica del riportare gli errori sia in sorted_dict solo errore bloccante che in error response errore bloccante, flag inviata
 - [ ] Adattare `send_response` a usare `error_response` invece di `sorted_dict` per gli errori.
 - [ ] modificare `open_scan` perché mostri solo l'ultimo errore bloccante ma alimenti i counter degli errori
