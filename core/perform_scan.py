@@ -16,6 +16,9 @@ from core.receptacle import receptacle
 # CORE FUNCTION
 ###################################
 
+# TODO insert a instruction to retrieve the time stamp when invoke open_scan to put in Active_phase_resume
+
+
 def perform_scan(scan_data):
     print(scan_data.type_scan)  # reference only DELETE in the final version
 

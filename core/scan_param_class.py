@@ -30,8 +30,8 @@ class ScanParam:
 # Evalutation and Errors parameters
         # TODO Evaluate how integrate this parameters in the Active/Passive phases
 
-        self.Active_phase_resume = {}   # filled by probes management
-        self.Passive_phase_resume = {}  # filled by replies management
+        self.active_phase_resume = {}   # filled by probes management
+        self.passive_phase_resume = {}  # filled by replies management
         self.socket_creation_e = 0      # General counter for error during socket creation
         self.packet_creation_e = 0      # General counter for error during packet creation
         self.sending_error = 0          # General counter for error during the delivery of packet

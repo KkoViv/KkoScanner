@@ -13,9 +13,12 @@ from netlib.packet_craft import packet_craft
 # CORE FUNCTION
 ###################################
 
-# TODO Fix the logic behind error reporting avoiding to store only the last error
+# TODO fix, modify and create instruction to fill Active_Phase_resume
 
 def open_scan(scan_data, port, flag_set):
+
+    # TODO instruction to update the Active_phase_resume[x][0] = "Tried"
+    # TODO instruction to update the Activve_phase_resume[x][0] = "Unknown error"
 
     sock = None
 
