@@ -20,7 +20,7 @@ from core.receptacle import receptacle
 
 
 def perform_scan(scan_data):
-    print(scan_data.type_scan)  # reference only DELETE in the final version
+    print(scan_data.type_scan)  # TODO reference only DELETE in the final version
 
     threads = []                        # open the thread list
     

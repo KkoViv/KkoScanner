@@ -18,8 +18,9 @@ def create_list_dict(scan_data):
                 # Key = port number
                 # Values :
                 "probe_state" : "not_attempted", #   not_attempted (default) / tried (at the beginning of open_scan)/ sent / failed
-                "outcome_reason" : "never_called",        #   never_called (default) / unknown_error / socket_creation_error / packet_creation_error / sendto_error
+                "outcome_reason" : "never_called",        #   never_called (default) / success / unknown_error / socket_creation_error / packet_creation_error / sendto_error
                 "active_timestamp" : None,      #   active_timestamp = when the task of active is marked completed sent or not.
+                "exception_message" : "unknown_exception", # unknown_exception as default
                 "socket_err_count" : 0,         #   socket creation error. 0 (default)
                 "packet_err_count" : 0,         #   packet creation error. 0 (default)
                 "sendto_err_count" : 0,         #   sendto error. 0 (default)
@@ -37,6 +38,7 @@ def create_list_dict(scan_data):
                 "probe_state" : "not_attempted",
                 "outcome_reason" : "never_called",    
                 "active_timestamp" : None,
+                "exception_message" : "unknown_exception",
                 "socket_err_count" : 0,
                 "packet_err_count" : 0,
                 "sendto_err_count" : 0,
@@ -53,6 +55,7 @@ def create_list_dict(scan_data):
                 "probe_state" : "not_attempted",
                 "outcome_reason" : "never_called",
                 "active_timestamp" : None,
+                "exception_message" : "unknown_exception",
                 "socket_err_count" : 0,
                 "packet_err_count" : 0,
                 "sendto_err_count" : 0,
@@ -74,6 +77,7 @@ def create_list_dict(scan_data):
                 "probe_state" : "not_attempted",
                 "outcome_reason" : "never_called",
                 "active_timestamp" : None,
+                "exception_message" : "unknown_exception",
                 "socket_err_count" : 0,
                 "packet_err_count" : 0,
                 "sendto_err_count" : 0,

@@ -14,7 +14,7 @@ class ScanParam:
         self.scan_list = []         # list of port generated from port_list
         self.sorted_dict = {}       # dictionary that store the scanning result / port as key
         self.semaphore = threading.Semaphore(1000)      # generale semaphore
-        # TODO insert variable to define the maxiumn attempts fpr socket creation, packet creation, delivery : default 3
+        self.max_attempt = 3 # define the maxiumn attempts fpr socket creation, packet creation, delivery : default 3
  
 
 
