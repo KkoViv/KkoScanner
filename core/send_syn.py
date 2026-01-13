@@ -14,7 +14,7 @@ from netlib.packet_craft import packet_craft
 ###################################
 
 
-def open_scan(scan_data, port, flag_set):
+def send_syn(scan_data, port, flag_set):
 
     scan_data.active_phase_resume[port]["probe_state"] = "tried"
     scan_data.active_phase_resume[port]["outcome_reason"] = "unknown_error"
@@ -37,7 +37,7 @@ def open_scan(scan_data, port, flag_set):
                     time.sleep(0.2) # add a little time before to try again
                     if scan_data.active_phase_resume[port]["socket_err_count"] == scan_data.max_attempt:
                         scan_data.sorted_dict[port] = ["Something went wrong during socket creation", None]
-                        scan_data.active_phase_resume[port]["active_timestamp"] = time.time()
+                        scan_data.active_phase_resume[port]["timestamp"] = time.time()
                         scan_data.active_phase_resume[port]["probe_state"] = "failed"
                         scan_data.active_phase_resume[port]["outcome_reason"] = "socket_creation_error"
                         scan_data.active_phase_resume[port]["exception_message"] = f"{error}"
@@ -57,7 +57,7 @@ def open_scan(scan_data, port, flag_set):
                     time.sleep(0.2) # add a little time before to try again
                     if scan_data.active_phase_resume[port]["packet_err_count"] == scan_data.max_attempt:
                         scan_data.sorted_dict[port] = ["Something went wrong during packet creation", None]
-                        scan_data.active_phase_resume[port]["active_timestamp"] = time.time()
+                        scan_data.active_phase_resume[port]["timestamp"] = time.time()
                         scan_data.active_phase_resume[port]["probe_state"] = "failed"
                         scan_data.active_phase_resume[port]["outcome_reason"] = "packet_creation_error"
                         scan_data.active_phase_resume[port]["exception_message"] = f"{error}"
@@ -78,7 +78,7 @@ def open_scan(scan_data, port, flag_set):
                     time.sleep(0.2) # add a little time before to try again
                     if scan_data.active_phase_resume[port]["sendto_err_count"] == scan_data.max_attempt:
                         scan_data.sorted_dict[port] = ["Something went wrong during sendto delivery", None]
-                        scan_data.active_phase_resume[port]["active_timestamp"] = time.time()
+                        scan_data.active_phase_resume[port]["timestamp"] = time.time()
                         scan_data.active_phase_resume[port]["probe_state"] = "failed"
                         scan_data.active_phase_resume[port]["outcome_reason"] = "sendto_error"
                         scan_data.active_phase_resume[port]["exception_message"] = f"{error}"
@@ -87,7 +87,7 @@ def open_scan(scan_data, port, flag_set):
 
     except Exception as error:
         scan_data.active_phase_resume[port]["probe_state"] = "failed"
-        scan_data.active_phase_resume[port]["active_timestamp"] = time.time()
+        scan_data.active_phase_resume[port]["timestamp"] = time.time()
         scan_data.active_phase_resume[port]["exception_message"] = f"{error}"
 
         return None
@@ -100,7 +100,7 @@ def open_scan(scan_data, port, flag_set):
     # update clean exit
     scan_data.active_phase_resume[port]["probe_state"] = "sent"
     scan_data.active_phase_resume[port]["outcome_reason"] = "success"
-    scan_data.active_phase_resume[port]["exception_message"] = ""
-    scan_data.active_phase_resume[port]["active_timestamp"] = time.time()
+    scan_data.active_phase_resume[port]["exception_message"] = None
+    scan_data.active_phase_resume[port]["timestamp"] = time.time()
 
     return None

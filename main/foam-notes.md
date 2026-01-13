@@ -170,13 +170,16 @@
 - [ ] Definire la firma di `send_response`.
 - [ ] Implementare `send_response` come copia 1:1 di `open_scan` con gestione errori diversa.
 - [ ] Integrare `send_response` dentro `read_response` nei punti giusti.
-
+- [ ] creare un dizionario copia modificata di active_phase per i log della funzione twin di open_scan
+- [ ] controlla che tutte le occorrenze di open_scan siano ora send_syn
+ 
 ### 8.2. Step successivi
 
 - [ ] Rivedere il modello di threading.
 - [ ] Introdurre logging opzionale (verbose/silent).
 - [X] Introdurre una modalità “debug” che mostra anche `error_response`.
 - [ ] Documentare i principali casi limite (porte filtrate, RST strani, ecc.).
+- [ ] introdurre nel report un indicazione di attendibilitá in base ai probe effettivamente inviati
 
 ---
 

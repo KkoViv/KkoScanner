@@ -17,15 +17,29 @@ def create_list_dict(scan_data):
                 # Active_phase_resume dict
                 # Key = port number
                 # Values :
-                "probe_state" : "not_attempted", #   not_attempted (default) / tried (at the beginning of open_scan)/ sent / failed
+                "probe_state" : "not_attempted", #   not_attempted (default) / tried (at the beginning of send_syn)/ sent / failed
                 "outcome_reason" : "never_called",        #   never_called (default) / success / unknown_error / socket_creation_error / packet_creation_error / sendto_error
-                "active_timestamp" : None,      #   active_timestamp = when the task of active is marked completed sent or not.
-                "exception_message" : "unknown_exception", # unknown_exception as default
+                "timestamp" : None,      #   active_timestamp = when the task of active is marked completed sent or not.
+                "exception_message" : None, # unknown_exception as default
                 "socket_err_count" : 0,         #   socket creation error. 0 (default)
                 "packet_err_count" : 0,         #   packet creation error. 0 (default)
                 "sendto_err_count" : 0,         #   sendto error. 0 (default)
                 }
+        scan_data.response_resume[scan_data.scan_list[0]] = {
+                # response monitor dict
+                # Key = port number
+                # Values : 
+                "flag" : None,                      # flag to deliver
+                "response_state" : "not_attempted", # not_attempted (default) / tried (at the beginning of send_response) / sent / failed
+                "outcome_reason" : "never_called",  # never_called(default) / success / unknown_error / socket_creation_error / packet_creation_error / sendto_error  
+                "timestamp" : None,          # marked completed sent or not
+                "exception_message" : None, # # unknown_exception as default
+                "socket_err_count" : 0,         #   socket creation error. 0 (default)
+                "packet_err_count" : 0,         #   packet creation error. 0 (default)
+                "sendto_err_count" : 0,         #   sendto error. 0 (default)    
 
+        }
+        
         # TODO passive phase resume
 
     
@@ -37,12 +51,25 @@ def create_list_dict(scan_data):
  
                 "probe_state" : "not_attempted",
                 "outcome_reason" : "never_called",    
-                "active_timestamp" : None,
-                "exception_message" : "unknown_exception",
+                "timestamp" : None,
+                "exception_message" : None,
                 "socket_err_count" : 0,
                 "packet_err_count" : 0,
                 "sendto_err_count" : 0,
                 }
+            scan_data.response_resume[x] = {
+                # response monitor dict
+                # Key = port number
+                # Values : 
+                "flag" : None,                      # flag to deliver
+                "response_state" : "not_attempted", # not_attempted (default) / tried (at the beginning of send_response) / sent / failed
+                "outcome_reason" : "never_called",  # never_called(default) / success / unknown_error / socket_creation_error / packet_creation_error / sendto_error  
+                "timestamp" : None,          # marked completed sent or not
+                "exception_message" : None, # # unknown_exception as default
+                "socket_err_count" : 0,         #   socket creation error. 0 (default)
+                "packet_err_count" : 0,         #   packet creation error. 0 (default)
+                "sendto_err_count" : 0,         #   sendto error. 0 (default)    
+            }
             # TODO passive phase resume
 
 
@@ -54,12 +81,25 @@ def create_list_dict(scan_data):
 
                 "probe_state" : "not_attempted",
                 "outcome_reason" : "never_called",
-                "active_timestamp" : None,
-                "exception_message" : "unknown_exception",
+                "timestamp" : None,
+                "exception_message" : None,
                 "socket_err_count" : 0,
                 "packet_err_count" : 0,
                 "sendto_err_count" : 0,
                 }
+            scan_data.response_resume[z] = {
+                # response monitor dict
+                # Key = port number
+                # Values : 
+                "flag" : None,                      # flag to deliver
+                "response_state" : "not_attempted", # not_attempted (default) / tried (at the beginning of send_response) / sent / failed
+                "outcome_reason" : "never_called",  # never_called(default) / success / unknown_error / socket_creation_error / packet_creation_error / sendto_error  
+                "timestamp" : None,          # marked completed sent or not
+                "exception_message" : None, # # unknown_exception as default
+                "socket_err_count" : 0,         #   socket creation error. 0 (default)
+                "packet_err_count" : 0,         #   packet creation error. 0 (default)
+                "sendto_err_count" : 0,         #   sendto error. 0 (default)    
+            }
            # TODO passive phase resume
 
     
@@ -76,12 +116,26 @@ def create_list_dict(scan_data):
 
                 "probe_state" : "not_attempted",
                 "outcome_reason" : "never_called",
-                "active_timestamp" : None,
-                "exception_message" : "unknown_exception",
+                "timestamp" : None,
+                "exception_message" : None,
                 "socket_err_count" : 0,
                 "packet_err_count" : 0,
                 "sendto_err_count" : 0,
                 }
+            
+            scan_data.response_resume[t] = {
+                # response monitor dict
+                # Key = port number
+                # Values : 
+                "flag" : None,                      # flag to deliver
+                "response_state" : "not_attempted", # not_attempted (default) / tried (at the beginning of send_response) / sent / failed
+                "outcome_reason" : "never_called",  # never_called(default) / success / unknown_error / socket_creation_error / packet_creation_error / sendto_error  
+                "timestamp" : None,          # marked completed sent or not
+                "exception_message" : None, # None as default
+                "socket_err_count" : 0,         #   socket creation error. 0 (default)
+                "packet_err_count" : 0,         #   packet creation error. 0 (default)
+                "sendto_err_count" : 0,         #   sendto error. 0 (default)    
+            }
             # TODO passive phase resume
 
 

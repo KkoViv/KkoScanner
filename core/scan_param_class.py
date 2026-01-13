@@ -17,7 +17,6 @@ class ScanParam:
         self.max_attempt = 3 # define the maxiumn attempts fpr socket creation, packet creation, delivery : default 3
  
 
-
 # Statistic parameters
 
         self.recv_pack_errors = 0       
@@ -30,8 +29,9 @@ class ScanParam:
 # Evalutation and Errors parameters
         # TODO Evaluate how integrate this parameters in the Active/Passive phases
 
-        self.active_phase_resume = {}   # filled by probes management
-        self.passive_phase_resume = {}  # filled by replies management
+        self.active_phase_resume = {}   # filled by send_syn
+        self.passive_phase_resume = {}  # filled by receptcle or read_response.py
+        self.response_resume = {}       # filled by send_response
         self.socket_creation_e = 0      # General counter for error during socket creation
         self.packet_creation_e = 0      # General counter for error during packet creation
         self.sending_error = 0          # General counter for error during the delivery of packet

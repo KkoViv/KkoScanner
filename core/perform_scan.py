@@ -9,14 +9,14 @@ import random
 import socket
 import threading
 from netlib.packet_craft import packet_craft
-from core.open_scan import open_scan
+from core.send_syn import send_syn
 from core.receptacle import receptacle
 
 ###################################
 # CORE FUNCTION
 ###################################
 
-# TODO insert a instruction to retrieve the time stamp when invoke open_scan to put in Active_phase_resume
+# TODO insert a instruction to retrieve the time stamp when invoke send_syn to put in Active_phase_resume
 
 
 def perform_scan(scan_data):
@@ -36,7 +36,7 @@ def perform_scan(scan_data):
     flag_set = "SYN"
 
     if mode == 's':
-        open_scan(scan_data, scan_data.port_list[1], flag_set)                     # return the port status
+        send_syn(scan_data, scan_data.port_list[1], flag_set)                     # return the port status
         time_out = (time.time() +30 )                 # take the current time
         
     elif mode == 'r':
@@ -49,7 +49,7 @@ def perform_scan(scan_data):
         
         for port in port_list:							# select the port to scan
             with scan_data.semaphore:					# open a thread if semaphore is under his limit
-                open_scan(scan_data, port, flag_set)   # call open_scan function(scan_data)
+                send_syn(scan_data, port, flag_set)   # call send_syn function(scan_data)
         time_out = (time.time() +30 ) 
 
     while time_out > time.time():
@@ -67,7 +67,7 @@ def perform_scan(scan_data):
                 # port_list = port_list.pop(0)        # delete the first element that is not a port number
                 # random.shuffle(port_list)
                 # for port in port_list
-                            # call open_scan function(scan_data)
+                            # call send_syn function(scan_data)
                 # return to main function
 
             # elif data.port_list == a
@@ -76,7 +76,7 @@ def perform_scan(scan_data):
                     # port_list.append(x)
                 # random.shuffle(port_list)
                 # for port in port_list
-                            # call open_scan function(scan_data)
+                            # call send_syn function(scan_data)
                 # return to main function
 
     '''

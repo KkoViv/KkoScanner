@@ -8,7 +8,7 @@ import struct
 import socket
 import time
 from colorama import Fore, Style
-from core.open_scan import open_scan
+from core.send_syn import open_scan
 from netlib.flag_bytes import flag_bytes
 # TODO add send_response
 
