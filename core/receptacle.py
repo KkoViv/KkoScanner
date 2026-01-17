@@ -24,6 +24,7 @@ def receptacle (scan_data, stop_continue):
     
         try:
             answer = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)# open the socket for the answer
+            # TODO set timeout for answer
             break
 
         except OSError as error:
@@ -51,5 +52,7 @@ def receptacle (scan_data, stop_continue):
         except OSError as error:
             scan_data.recv_pack_errors += 1
             continue
+
+        # TODO create except per recevrfrom timeout
 
     answer.close()

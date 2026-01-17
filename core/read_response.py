@@ -8,7 +8,7 @@ import struct
 import socket
 import time
 from colorama import Fore, Style
-from core.send_syn import open_scan
+from core.send_response import send_response
 from netlib.flag_bytes import flag_bytes
 # TODO add send_response
 
@@ -73,14 +73,14 @@ def read_response(scan_data, data):
             if scan_data.type_scan == 'o':
                 with scan_data.semaphore:              # set scan_data.semaphore to use open scan (with)
                     flag_set = flag_bytes('ACK')        # call flag_set passing ACK return flag_set
-                    open_scan(scan_data, recv_s_port, flag_set) # send ack calling openscan passing scan_data, recv_s_port, flag_set):
+                    send_response(scan_data, recv_s_port, flag_set) # send ack calling openscan passing scan_data, recv_s_port, flag_set):
                     time.sleep(0.1)                     #little time.out
                     flag_set2 = flag_bytes('FIN')       # call flag_set passing FIN return flag_set
-                    open_scan(scan_data, recv_s_port, flag_set2) # send FIN calling openscan passing scan_data, recv_s_port, flag_set):
+                    send_response(scan_data, recv_s_port, flag_set2) # send FIN calling openscan passing scan_data, recv_s_port, flag_set):
             elif scan_data.type_scan == 'h':
                 with scan_data.semaphore:              # set scan_data.semaphore to use open scan (with)                   
                     flag_set3 = flag_bytes('RST')       # call flag_set passing RST return flag_set
-                    open_scan(scan_data, recv_s_port, flag_set3)   # send rst calling openscan passing scan_data, recv_s_port, flag_set):
+                    send_response(scan_data, recv_s_port, flag_set3)   # send rst calling openscan passing scan_data, recv_s_port, flag_set):
 
         elif f_rst == True:
             scan_data.sorted_dict[recv_s_port] = ["Closed", None]
@@ -89,11 +89,11 @@ def read_response(scan_data, data):
             scan_data.sorted_dict[recv_s_port] = [unusual_flags, None]
             with scan_data.semaphore:              # set scan_data.semaphore to use open scan (with)                   
                 flag_set3 = flag_bytes('RST')       # call flag_set passing RST return flag_set
-                open_scan(scan_data, recv_s_port, flag_set3)   # send rstcalling openscan passing scan_data, recv_s_port, flag_set):
+                send_response(scan_data, recv_s_port, flag_set3)   # send rstcalling openscan passing scan_data, recv_s_port, flag_set):
     
     else:
         scan_data.sorted_dict[recv_s_port] = ["Unexpected response from this port" , None]
         with scan_data.semaphore:              # set scan_data.semaphore to use open scan (with)                   
             flag_set3 = flag_bytes('RST')       # call flag_set passing RST return flag_set
-            open_scan(scan_data, recv_s_port, flag_set3)   # send rst calling openscan passing scan_data, recv_s_port, flag_set):
+            send_response(scan_data, recv_s_port, flag_set3)   # send rst calling openscan passing scan_data, recv_s_port, flag_set):
 

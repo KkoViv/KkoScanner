@@ -26,7 +26,6 @@ from core.scan_param_class import ScanParam
 from ui.chosen_ports import chosen_ports
 from util.create_list import create_list
 from ui.scan_type import scan_type
-# DELETE IT from flag_bytes import flag_bytes
 from core.perform_scan import perform_scan
 from util.my_ip_function import my_ip_function
 from util.create_list_dict import create_list_dict
@@ -60,14 +59,17 @@ def main():
     # TODO add function to ask user how many attempts needed before to stop the active phase for single port
 
     create_list_dict(scan_data)                                    # create the list for scanning and the dict to store results
-    
-    # DELETE IT scan_data.flag_bytes = flag_bytes(scan_data.type_scan)         # set the flags TCP bytes
 
     perform_scan(scan_data)                                       # perform the scan
 
     display_result(scan_data)                                     # output
 
     # TODO add option to read error related to the ACK/RST/FIN packet sent
+
+    x = scan_data.port_list[1]
+
+    print (f"{scan_data.active_phase_resume[x]}")
+    print (f"{scan_data.response_resume[x]}")
 
 if __name__ == "__main__":
     main()
